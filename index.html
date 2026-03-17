@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix Churn Predictor</title>
+    <style>
+        body { font-family: Arial; margin: 50px; background: grey; }
+        .form-container { background: white; padding: 30px; border-radius: 10px; width: 400px; margin: auto; box-shadow: 0px 0px 10px gray; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #008CBA; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #005f6b; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+  <div class="form-container">
+        <h2>Netflix Churn Predictor</h2>
+        <form method="POST" action="/predict">
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="gender" placeholder="Gender">
+            <input type="text" name="country" placeholder="Country">
+            <input type="text" name="subscription_type" placeholder="Subscription Type">
+            <input type="text" name="payment_method" placeholder="Payment Mode">
+            <input type="text" name="primary_device" placeholder="Primary Device">
+            <input type="number" name="account_age_months" placeholder="Account Age in Months" required>
+            <input type="number" name="monthly_fee" placeholder="Monthly fees" required>
+            <input type="number" name="devices_used" placeholder="No. of Devices Used" required>
+            <input type="text" name="favorite_genre" placeholder="Favorite Genre">
+            <input type="number" name="avg_watch_time_minutes" placeholder="Average Watch Time in Minutes" required>
+            <input type="number" name="watch_sessions_per_week" placeholder="No. of Watch Session per week" required>
+            <input type="number" name="binge_watch_sessions" placeholder="No. of Being Watch Session" required>
+            <input type="number" name="completion_rate" placeholder="Percentage of Content Fully Watched" required>
+            <input type="number" name="rating_given" placeholder="Average Rating Given" required>
+            <input type="number" name="content_interactions" placeholder="no. of Likes,Review orInteraction" required>
+            <input type="number" name="recommendation_click_rate" placeholder="Percentage of recommendations clicked" required>
+            <input type="number" name="days_since_last_login" placeholder="Last Login(in days)" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if result %}
+            <h3>{{ result }}</h3>
+        {% endif %}
+    </div>
+
+</body>
+</html>
