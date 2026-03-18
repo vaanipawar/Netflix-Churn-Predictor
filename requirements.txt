@@ -3,3 +3,5 @@ xgboost==3.1.3
 joblib
 numpy
 flask
+gunicorn
+pandas
